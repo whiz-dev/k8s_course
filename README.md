@@ -7,3 +7,5 @@ Kubernetes Course
 [Lab5 - Statefulset, LimitRange, ResourceQuota](https://github.com/wsjang619/k8s_course/tree/main/lab5)  
 [Lab6 - Ingress](https://github.com/wsjang619/k8s_course/tree/main/lab6)  
 [Lab7 - API Access](https://github.com/wsjang619/k8s_course/tree/main/lab7)  
+
+test
