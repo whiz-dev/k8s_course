@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: ss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: db
+  serviceName: "db"
+  template:
+    metadata:
+      labels:
+        type: db
+    spec:
+      containers:
+      - name: container
+        image: nginx
+      terminationGracePeriodSeconds: 10

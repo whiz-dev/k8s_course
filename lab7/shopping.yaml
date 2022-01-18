@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sp-pod
+  labels:
+    category: shopping
+spec:
+  containers:
+  - name: container
+    image: ghcr.io/wsjang5324/shopping
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sp-svc
+spec:
+  selector:
+    category: shopping
+  ports:
+  - port: 8080

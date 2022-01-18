@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job1
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: container
+        image: ghcr.io/wsjang5324/init
+        command: ["sh", "-c", "echo 'job start';sleep 20; echo 'job end'"]
+      terminationGracePeriodSeconds: 0

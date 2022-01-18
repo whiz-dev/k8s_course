@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: rq1
+  namespace: ns1
+spec:
+  hard:
+    requests.memory: 1Gi
+    limits.memory: 1Gi
