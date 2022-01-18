@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job2
+spec:
+  completions: 6
+  parallelism: 2
+  activeDeadlineSeconds: 30
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: container
+        image: ubuntu
+        command: ["sh", "-c", "echo 'job start';sleep 15; echo 'job end'"]
+      terminationGracePeriodSeconds: 0
