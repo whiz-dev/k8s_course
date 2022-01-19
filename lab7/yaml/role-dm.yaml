@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: role-dm
+  labels:
+    app: role-dm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: role-dm
+  template:
+    metadata:
+      labels:
+        app: role-dm
+    spec:
+      containers:
+        - name: role-dm
+          image: nginx
