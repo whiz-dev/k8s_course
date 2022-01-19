@@ -17,4 +17,28 @@ kubectl describe -n ns1 secrets
 token 값을 메모장에 저장
 ```
 
-3.
+3. yaml 확인
+```
+cat tk-pod.yaml
+```
+
+4. 위 yaml 로 리소스 생성
+```
+kubectl create -f tk-pod.yaml
+```
+
+5. 저장해둔 token 값을 아래 명령어에 넣고 수행
+```
+curl -k -H "Authorization: Bearer <TOKEN>" https://<MasterIP>:6443/api/v1
+```
+```
+v1 버전에 대한 api 리스트 정보를 확인가능
+```
+
+6.  아래 명령을 수행하여 pod의 정보를 확인
+```
+curl -k -H "Authorization: Bearer <TOKEN>" https://<MasterIP>:6443/api/v1/namespaces/ns1/pods
+```
+```
+ns1이라는 Namespace의 default 유저(Service Account)에게는 아직 Pod를 조회할 권한이 없기에 Pod정보를 볼 수 없다고 메시지가 출력됨.
+```
