@@ -1,6 +1,6 @@
 Kubernetes Course
 ===
-[Lab1 - Installation](https://github.com/wsjang619/k8s_course/tree/main/lab1)  
+[Lab1 - Installation](https://github.com/wsjang619/k8s_course/lab1)  
 [Lab2 - Pod, Namespace, Replicaset, Deployment](https://github.com/wsjang619/k8s_course/tree/main/lab2)  
 [Lab3 - Service, Volume, Configmap, Secret](https://github.com/wsjang619/k8s_course/tree/main/lab3)  
 [Lab4 - Daemonset, Job, Cronjob](https://github.com/wsjang619/k8s_course/tree/main/lab4)  
