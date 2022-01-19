@@ -22,10 +22,50 @@ cat canary_v1-ingress.yaml
 ```
 kubectl create -f canary_v1-ingress.yaml
 ```
-5.
 
-6. hosts 파일 수정
+5. hosts 파일 수정
 ```
 echo <masterIP> www.canary.com >> /etc/hosts
 cat /etc/hosts
+```
+
+6. ingress-nginx-controller 서비스를 확인
+```
+kubectl get svc -n ingress-nginx
+```
+
+7. 해당 노드포트를 활용하여 curl 수행
+```
+curl www.canary.com:<위 결과에서 확인한 포트>/version
+```
+
+8. v2 의 yaml 확인
+```
+cat v2.yaml
+```
+
+9. 위 yaml 로 리소스 생성
+```
+kubectl create -f v2.yaml
+```
+
+10. v2에 대한 ingress yaml 확인
+```
+cat canary_v2-Ingress.yaml
+```
+
+11. 위 yaml 로 리소스 생성
+```
+kubectl create -f canary_v2-Ingress.yaml
+```
+
+12. 해당 명령어로 curl 반복 수행
+```
+while true; do curl www.canary.com:<위 7번과정에서 입력했던 포트>/version; sleep 1; done
+```
+ctrl + c 키를 입력하여 취소
+
+13. 리소스 삭제
+```
+kubectl delete pod,svc,ingress --all
 ```
