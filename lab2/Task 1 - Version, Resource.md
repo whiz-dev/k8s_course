@@ -21,3 +21,8 @@ kubectl config current-context
 ```
 kubectl config view
 ```
+
+5. 실습 파일 다운로드
+```
+git clone https://github.com/wsjang619/k8s_course
+```
