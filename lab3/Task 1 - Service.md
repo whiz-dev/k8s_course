@@ -84,8 +84,12 @@ curl <Worker노드의 IP>:30000
 ```
 cat svc3.yaml
 ```
+13. yaml 을 활용한 Loadbalancer 유형의 Service 생성
+```
+kubectl create -f svc3.yaml
+```
 
-13. 생성한 Service 확인
+14. 생성한 Service 확인
 ```
 kubectl get svc
 ```
