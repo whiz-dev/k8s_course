@@ -66,7 +66,7 @@ kubectl create -f filecs-pod.yaml
 
 12. 위 11에서 생성한 Pod의 컨테이너로 접속
 ```
-kubectl exec -it file-pod --container container -- /bin/bash
+kubectl exec -it filecs-pod --container container -- /bin/bash
 ```
 
 13. file 기반 Configmap, Secret이 추가한 환경설정 확인
