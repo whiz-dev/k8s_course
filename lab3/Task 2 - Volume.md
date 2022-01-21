@@ -15,24 +15,13 @@ cat emptydir-pod.yaml
 ```
 kubectl create -f emptydir-pod.yaml
 ```
-3. 위 2에서 만든 Pod 내부의 컨테이너 redis로 접속합니다.
-```
-kubectl exec -it emptydir --container redis -- /bin/bash
-```
-
-4. 마운트 된 디렉토리로이동 후 파일생성 테스트
-```
-cd /mount1
-echo hello emptydir >> test.txt
-cat test.txt
-```
 
 3. 위 2에서 만든 Pod 내부의 컨테이너 redis로 접속합니다.
 ```
 kubectl exec -it emptydir --container redis -- /bin/bash
 ```
 
-4. 마운트 된 디렉토리로이동 후 파일생성
+4. 마운트 된 디렉토리로 이동 후 파일생성
 ```
 cd /mount1
 echo hello emptydir >> test.txt
