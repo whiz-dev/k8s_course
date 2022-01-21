@@ -98,7 +98,7 @@ kubectl create -f pv-pod.yaml
 kubectl get pv,pvc,po
 ```
 
-16. pv-pod 안에 있는 컨테이너로 접속
+16. persistentvolume 안에 있는 컨테이너로 접속
 ```
 kubectl exec -it persistentvolume --container container -- /bin/bash
 ```
@@ -111,7 +111,7 @@ cat test.txt
 exit
 ```
 
-18. pv-pod 가 어떤 노드에 생성되었는지 확인
+18. persistentvolume라는 pod 가 어떤 노드에 생성되었는지 확인
 ```
 kubectl get po persistentvolume -o wide
 ```
