@@ -11,7 +11,8 @@ cat configmap.yaml secret.yaml
 
 2. yaml 을 활용한 configmap 생성
 ```
-kubectl create -f configmap.yaml secret.yaml
+kubectl create -f configmap.yaml
+kubectl create -f secret.yaml
 ```
 
 3. 생성 확인
