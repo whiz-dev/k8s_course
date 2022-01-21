@@ -88,7 +88,9 @@ cat pv.yaml pvc.yaml pv-pod.yaml
 
 14. 위 13에서 확인한 yaml로 리소스 생성
 ```
-kubectl create -f pv.yaml pvc.yaml pv-pod.yaml
+kubectl create -f pv.yaml
+kubectl create -f pvc.yaml
+kubectl create -f pv-pod.yaml
 ```
 
 15. 생성된 리소스 확인
