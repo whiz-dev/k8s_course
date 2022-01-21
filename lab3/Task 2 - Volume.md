@@ -23,7 +23,7 @@ kubectl exec -it emptydir --container redis -- /bin/bash
 4. 마운트 된 디렉토리로이동 후 파일생성 테스트
 ```
 cd /mount1
-echo hello emptydir >> text.txt
+echo hello emptydir >> test.txt
 cat test.txt
 ```
 
@@ -35,7 +35,7 @@ kubectl exec -it emptydir --container redis -- /bin/bash
 4. 마운트 된 디렉토리로이동 후 파일생성
 ```
 cd /mount1
-echo hello emptydir >> text.txt
+echo hello emptydir >> test.txt
 cat test.txt
 exit
 ```
