@@ -72,6 +72,7 @@ kubectl exec -it filecs-pod --container container -- /bin/bash
 13. file 기반 Configmap, Secret이 추가한 환경설정 확인
 ```
 env
+exit
 ```
 
 14. clear
