@@ -100,7 +100,7 @@ kubectl get pv,pvc,po
 
 16. pv-pod 안에 있는 컨테이너로 접속
 ```
-kubectl exec -it pv-pod --container container -- /bin/bash
+kubectl exec -it persistentvolume --container container -- /bin/bash
 ```
 
 17. 마운트 된 디렉토리로 이동 후 파일생성
@@ -113,7 +113,7 @@ exit
 
 18. pv-pod 가 어떤 노드에 생성되었는지 확인
 ```
-kubectl get po pv-pvc -o wide
+kubectl get po persistentvolume -o wide
 ```
 
 19. 위 18에서 확인한 노드의 터미널로 이동하여 파일 생성 확인
