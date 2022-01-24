@@ -18,3 +18,4 @@ spec:
     app: v2
   ports:
   - port: 8080
+  targetPort: 80
