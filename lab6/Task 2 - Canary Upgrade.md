@@ -36,7 +36,7 @@ kubectl get svc -n ingress-nginx
 
 7. 해당 노드포트를 활용하여 curl 수행
 ```
-curl www.canary.com:<위 결과에서 확인한 포트>/version
+curl www.canary.com:<위 결과에서 확인한 포트>
 ```
 
 8. v2 의 yaml 확인
@@ -61,7 +61,7 @@ kubectl create -f canary_v2-Ingress.yaml
 
 12. 해당 명령어로 curl 반복 수행
 ```
-while true; do curl www.canary.com:<위 7번과정에서 입력했던 포트>/version; sleep 1; done
+while true; do curl www.canary.com:<위 7번과정에서 입력했던 포트>; sleep 1; done
 ```
 ctrl + c 키를 입력하여 취소
 
