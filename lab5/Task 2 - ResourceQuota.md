@@ -22,7 +22,7 @@ kubectl get resourcequota -n rq-ns
 
 4. 상세 정보 조회
 ```
-kubectl describe resourcequota
+kubectl describe resourcequota -n rq-ns
 ```
 
 5. pod 생성 yaml 확인
