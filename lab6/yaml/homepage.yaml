@@ -18,3 +18,4 @@ spec:
     category: homepage
   ports:
   - port: 8080
+    targetPort: 80
