@@ -12,3 +12,6 @@ nohup kubectl proxy --port=8001 --address=<MasterIP> --accept-hosts='^*$' >/dev/
 ```
 API 접근을 http 방식으로 노드 정보를 확인
 ```  
+```
+curl http://<MasterIP>:8001/api/v1/nodes
+```
