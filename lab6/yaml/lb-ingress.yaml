@@ -21,7 +21,7 @@ spec:
             name: ct-svc
             port:
               number: 8080
-      - path: /order
+      - path: /schedule
         pathType: Prefix
         backend:
           service:
