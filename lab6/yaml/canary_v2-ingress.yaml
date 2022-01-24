@@ -8,8 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: www.canary.com
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
