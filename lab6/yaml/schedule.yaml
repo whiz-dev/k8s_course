@@ -15,6 +15,6 @@ metadata:
   name: sc-svc
 spec:
   selector:
-    category: order
+    category: schedule
   ports:
   - port: 8080
