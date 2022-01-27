@@ -4,7 +4,7 @@
 # 설치
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
 ```
 
 
@@ -19,7 +19,7 @@ grep 'client-key-data' ~/.kube/config | head -n 1 | awk '{print $2}' | base64 -d
 
 cat kubecfg.key
 
-openssl pkcs12 -export -clcerts -inkey kubecfg.key -in kubecfg.crt -out kubecfg.p12 -name "kubernetes-admin"
+openssl pkcs12 -export -clcerts -inkey kubecfg.key -in kubecfg.crt -out kubecfg.p12 -name "admin-user"
 ```
 
 # 암호는 1234로 통일
@@ -47,11 +47,11 @@ scp -i ./k8skey.pem ubuntu@<masterip>:/home/ubuntu/kubecfg* ./
 
 ```
 cat <<EOF | kubectl create -f -
- apiVersion: v1
- kind: ServiceAccount
- metadata:
-   name: admin-user
-   namespace: kube-system
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
 EOF
 ```
 
@@ -59,24 +59,24 @@ EOF
 
 ```
 cat <<EOF | kubectl create -f -
- apiVersion: rbac.authorization.k8s.io/v1
- kind: ClusterRoleBinding
- metadata:
-   name: admin-user
- roleRef:
-   apiGroup: rbac.authorization.k8s.io
-   kind: ClusterRole
-   name: cluster-admin
- subjects:
- - kind: ServiceAccount
-   name: dashboard-user
-   namespace: kube-system
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
 EOF
 ```  
 # 토큰확인
 
 ```
-kubectl describe secret $(kubectl -n kube-system get secret | grep dashboard-user | awk '{print $1}') -n kube-system
+kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
 ```
 
 # 토큰값을 메모장에 저장
