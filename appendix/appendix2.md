@@ -31,7 +31,7 @@ kubectl top node
 # 실습에 필요한 Deployment와 Service 생성
 
 ```
-kubectl apply -f [https://k8s.io/examples/application/php-apache.yam](https://k8s.io/examples/application/php-apache.yaml)l
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 ```
 
 # HPA 생성
