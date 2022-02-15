@@ -81,7 +81,19 @@ kubectl describe deploy
 ```
 kubectl edit deploy dp2
 ```
-`type: RollingUpdate -> type: Recreate 로 수정`  
+strategy:
+  rollingUpdate:
+    maxSurge: 25%
+    maxUnavailable: 25%
+  type: RollingUpdate
+```
+를  
+```
+strategy:
+  type: Recreate
+```
+로 수정합니다.
+
 `vi 편집기 사용법과 동일합니다.`
 
 14. 컨테이너 이미지 1.16.0 으로 버전 업데이트
