@@ -81,18 +81,18 @@ kubectl describe deploy
 ```
 kubectl edit deploy dp2
 ```
-`
+```
 strategy:
   rollingUpdate:
     maxSurge: 25%
     maxUnavailable: 25%
   type: RollingUpdate
-`
+```
 를  
-`
+```
 strategy:
   type: Recreate
-`
+```
 로 수정합니다.
 
 `vi 편집기 사용법과 동일합니다.`
