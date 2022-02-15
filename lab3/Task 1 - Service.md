@@ -71,7 +71,7 @@ kubectl describe pod
 ```
 
 
-11. curl 명령을 통한 통신 확인
+12. curl 명령을 통한 통신 확인
 ```
 curl <Worker노드의 IP>:30000
 ```
