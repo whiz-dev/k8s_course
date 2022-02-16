@@ -65,14 +65,19 @@ kubectl get service
 kubectl get ingress
 ```
 
-13. 위 12 에서 확인한 각 service의 ClusterIP로 Curl 수행
+13. ingress controller 가 만든 Nodeport 유형의 서비스의 Nodeport를 확인
 ```
-curl <hp-svc 서비스의 ClusterIP>:8080
-curl <ct-svc 서비스의 ClusterIP>:8080
-curl <sc-svc 서비스의 ClusterIP>:8080
+kubectl get svc -n ingress-nginx
 ```
 
-14. clear
+14. 워커노드의 ip와 13과정에서 확인한 Nodeport를 확인하여 접근시도
+```
+curl <워커노드 ip>:<13에서 확인한 portnumber>
+curl <워커노드 ip>:<13에서 확인한 portnumber>/customer
+curl <워커노드 ip>:<13에서 확인한 portnumber>/schedule
+```
+
+15. clear
 ```
 kubectl delete pod,svc,ingress --all
 ```
