@@ -51,12 +51,12 @@ kubectl create -f v2.yaml
 
 10. v2에 대한 ingress yaml 확인
 ```
-cat canary_v2-Ingress.yaml
+cat canary_v2-ingress.yaml
 ```
 
 11. 위 yaml 로 리소스 생성
 ```
-kubectl create -f canary_v2-Ingress.yaml
+kubectl create -f canary_v2-ingress.yaml
 ```
 
 12. 해당 명령어로 curl 반복 수행
