@@ -2,10 +2,8 @@
 
 ### aws 의 Cloud9 서비스를 사용하여 실습에서 사용할 IDE 환경을 구축  
 #
-1. 해당 링크로 접속합니다.
-```
-https://gkn-hjchoi.signin.aws.amazon.com/console
-```
+1. 제공된 링크로 접속합니다.
+
 
 2. 제공받은 계정정보로 로그인합니다.
 ![image](https://user-images.githubusercontent.com/92773629/137866137-36f2068c-4bc9-4e07-a2fa-1b67ee7ebc82.png)
