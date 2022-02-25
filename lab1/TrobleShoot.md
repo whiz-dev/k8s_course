@@ -10,6 +10,8 @@ Unable to connect to the server: x509: certificate signed by unknown authority (
 # 해결방법
 rm -rf \$HOME/.kube/config
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+```
+```
 chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/kubelet.conf
 ```
