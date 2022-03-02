@@ -8,6 +8,8 @@
 2. 제공받은 계정정보로 로그인합니다.
 ![image](https://user-images.githubusercontent.com/92773629/137866137-36f2068c-4bc9-4e07-a2fa-1b67ee7ebc82.png)
 
+우측 상단 지역을 클릭하고 서울을 클릭합니다.
+
 3. 상단 검색창에 Cloud9 을 검색하고 Cloud9 서비스를 클릭합니다.
 
 ![image](https://user-images.githubusercontent.com/92773629/137866767-ff6f5a76-1d89-49d0-9c69-21d800131b74.png)
@@ -21,6 +23,7 @@
 ![image](https://user-images.githubusercontent.com/92773629/137866906-ee40b892-04f4-4fa4-8652-fcb3032712e3.png)
 
 6. Configure settings 에서 Instance type 을 t3.small 을 선택하고, Platform의 Ubuntu server 18.04 선택 후 Next step 버튼을 클릭합니다.
+그리고 선택한 내용 확인 후 Create environment 버튼 클릭합니다.
 
 <br/>
 
