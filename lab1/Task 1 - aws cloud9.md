@@ -20,9 +20,9 @@
 
 ![image](https://user-images.githubusercontent.com/92773629/137866906-ee40b892-04f4-4fa4-8652-fcb3032712e3.png)
 
-6. Configure settings 에서 Instance type 을 t3.small 을 선택하고 Next step 버튼을 클릭합니다.
+6. Configure settings 에서 Instance type 을 t3.small 을 선택하고, Platform의 Ubuntu server 18.04 선택 후 Next step 버튼을 클릭합니다.
 
-![image](https://user-images.githubusercontent.com/92773629/137873379-791379c1-e593-4e8d-af20-30bc440e03e9.png)
+<br/>
 
 7. 제공받은 pem 파일을 Cloud 환경에서 좌측상단 File - Upload Local Files 를 클릭하여 해당 파일을 업로드합니다.
 
