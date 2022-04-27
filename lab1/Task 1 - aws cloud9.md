@@ -6,7 +6,7 @@
 
 
 2. 제공받은 계정정보로 로그인합니다.
-![Alt text](relative/path/to/1.png?raw=true "Title")
+![](./img/1.png)
 ![image](https://user-images.githubusercontent.com/92773629/137866137-36f2068c-4bc9-4e07-a2fa-1b67ee7ebc82.png)
 
 우측 상단 지역을 클릭하고 서울을 클릭합니다.
