@@ -32,7 +32,7 @@ kubeadm init --pod-network-cidr=172.16.0.0/16 --apiserver-advertise-address=<Mas
 ```
 출력결과(kubeadm join 이하 명령어)를 잘 저장해둡니다.
 3~5분 소요됩니다.
-![image](https://user-images.githubusercontent.com/92773629/137877948-678049de-4e17-4e11-be31-00daee62ef62.png)
+![](./img/3-kubeadm-init-result.png)
 
 3. Master 노드 설정
 ```
@@ -46,7 +46,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
-![image](https://user-images.githubusercontent.com/92773629/137878112-476a8d5f-9399-46a9-acaa-5be0a5c0af84.png)
+![](./img/3-calico-install.png)
 
 5. kubectl 자동완성 적용
 ```
@@ -65,7 +65,7 @@ complete -F __start_kubectl k
 ```
 <kubeadm join 으로 시작하는 2번과정에서 저장해 두었던 명령어>
 ```
-![image](https://user-images.githubusercontent.com/92773629/138024472-3afc25c2-2de7-4c02-b773-4ec86f4eac8a.png)
+![](./img/3-kubeadm-join-result.png)
 
 
 7. 연동 확인 (Master노드에서 확인합니다.)
@@ -73,4 +73,4 @@ complete -F __start_kubectl k
 kubectl get nodes
 ```
 
-![image](https://user-images.githubusercontent.com/92773629/138024249-86e26da4-dd00-40ae-a357-d9c776b89443.png)
+![](./img/3-kubectl-get-nodes.png)

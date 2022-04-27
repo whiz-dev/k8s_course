@@ -105,6 +105,6 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl status docker
 ```
-![image](https://user-images.githubusercontent.com/92773629/137876933-cb530415-d5f5-4440-91fc-66f1e13c10d8.png)
+![](./img/2-docker-status.png)
 
 키보드의 Q 키 또는 <Ctrl + C> 를 입력하면 다시 쉘을 받아옵니다.
