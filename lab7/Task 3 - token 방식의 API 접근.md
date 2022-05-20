@@ -25,9 +25,8 @@ EOF
 kubectl describe -n ns1 serviceaccounts
 kubectl describe -n ns1 secret
 ```  
-
 token 값을 메모장에 저장
-```
+
 
 3. yaml 확인
 ```
