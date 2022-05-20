@@ -34,6 +34,18 @@ cat role-sa.yaml
 ```
 kubectl create -f role-sa.yaml
 ```  
+role-sa 의 secret 생성
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-role
+  annotations:
+    kubernetes.io/service-account.name: "role-sa"
+type: kubernetes.io/service-account-token
+EOF
+```
 
 7. role-sa 의 toekn 을 확인
 ```
