@@ -54,6 +54,19 @@ metadata:
   namespace: kubernetes-dashboard
 EOF
 ```
+# secret 생성
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-dashboard
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "admin-user"
+type: kubernetes.io/service-account-token
+EOF
+```
 
 # rb 생성
 
