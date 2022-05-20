@@ -7,13 +7,24 @@
 ```
 kubectl create ns ns1
 ```
-
-2. ns1 의 Service Account 와 Secret을 확인
+Secret 생성
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret1
+  namespace: ns1
+  annotations:
+    kubernetes.io/service-account.name: "default"
+type: kubernetes.io/service-account-token
+```
+2. ns1 의 Service Account, secret 확인
 ```
 kubectl describe -n ns1 serviceaccounts
-kubectl describe -n ns1 secrets
+kubectl describe -n ns1 secret
 ```  
-```
+
 token 값을 메모장에 저장
 ```
 
