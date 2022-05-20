@@ -18,6 +18,7 @@ metadata:
   annotations:
     kubernetes.io/service-account.name: "default"
 type: kubernetes.io/service-account-token
+EOF
 ```
 2. ns1 의 Service Account, secret 확인
 ```
