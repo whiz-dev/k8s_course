@@ -9,16 +9,7 @@ kubectl create ns ns1
 ```
 Secret 생성
 ```
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Secret
-metadata:
-  name: secret1
-  namespace: ns1
-  annotations:
-    kubernetes.io/service-account.name: "default"
-type: kubernetes.io/service-account-token
-EOF
+kubectl create -f ns1-secret.yaml
 ```
 2. ns1 의 Service Account, secret 확인
 ```
