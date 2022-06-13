@@ -5,6 +5,8 @@
 1. kubeadm, kubelet, kubectl 설치
 
 `해당 과정은 Master, Worker1, Worker2 모든 노드에서 진행합니다.`
+
+
 필요 패키지 설치
 ```
 sudo apt-get -y update
