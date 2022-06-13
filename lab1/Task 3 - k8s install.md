@@ -5,9 +5,13 @@
 1. kubeadm, kubelet, kubectl 설치
 
 `해당 과정은 Master, Worker1, Worker2 모든 노드에서 진행합니다.`
+필요 패키지 설치
 ```
 sudo apt-get -y update
 sudo apt-get install -y apt-transport-https ca-certificates curl
+```
+레포지토리 추가
+```
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
@@ -23,6 +27,7 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 sudo sysctl --system
 ```
+kubelet, kubeadm, kubectl 설치
 ```
 sudo apt-get -y update
 ```
