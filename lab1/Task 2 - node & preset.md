@@ -45,66 +45,53 @@ sudo apt-get update -y
 sudo apt-get install -y curl ethtool ebtables socat conntrack
 ```
 
-5. iptables 설정
+5. 모듈 로드
 ```
-cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+cat <<EOF | sudo tee /etc/modules-load.d/crio.conf
+overlay
 br_netfilter
 EOF
 
-cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+sudo modprobe overlay
+sudo modprobe br_netfilter
+```
+6. sysctl 파라미터 설정
+```
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
 net.bridge.bridge-nf-call-ip6tables = 1
-net.bridge.bridge-nf-call-iptables = 1
 EOF
+
 sudo sysctl --system
 ```
 
-6. Docker 설치
+7. 버전 변수 설정
 ```
-sudo apt-get -y update
-sudo apt-get -y install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-```
-```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-```
-```
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-```
-sudo apt-get -y update
-```
-```
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+export OS=xUbuntu_18.04 # OS 버전
+export VERSION=1.24     # cri-o 버전
 ```
 
-7. cgroup 설정
+8. CRI-O 설치
 ```
-sudo mkdir /etc/docker
-cat <<EOF | sudo tee /etc/docker/daemon.json
-{
-  "exec-opts": ["native.cgroupdriver=systemd"],
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "100m"
-  },
-  "storage-driver": "overlay2"
-}
+cat <<EOF | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /
 EOF
+cat <<EOF | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.list
+deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/$VERSION/$OS/ /
+EOF
+
+curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/Release.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/libcontainers.gpg add -
+curl -L https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/$OS/Release.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/libcontainers-cri-o.gpg add -
+
+apt-get update
+apt-get install cri-o cri-o-runc
 ```
 
-8. Docker 실행 및 확인
 ```
-sudo systemctl enable docker
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-sudo systemctl status docker
+systemctl daemon-reload
+systemctl enable crio --now
+systemctl status crio
 ```
-![](./img/2-docker-status.png)
 
 키보드의 Q 키 또는 <Ctrl + C> 를 입력하면 다시 쉘을 받아옵니다.
