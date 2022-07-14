@@ -81,6 +81,7 @@ kubectl port-forward --namespace monitoring svc/prometheus-grafana 9091:80
 ```
 http://<workerIP>:<NodePort>
 ```
+admin/prom-operator
 
 # 클러스터 노드에 대한 모니터링 대시보드
 좌측 메뉴 -> Import -> 3119 -> load
