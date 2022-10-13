@@ -11,4 +11,4 @@ spec:
           restartPolicy: Never
           containers:
           - name: container
-            image: ubuntu
+            image: nginx
