@@ -79,8 +79,8 @@ user21 증상 관련
 https://potato-yong.tistory.com/150
 
 
-Found multiple CRI endpoints on the host. 에러 메시지 관련
- - 런타임 중복 발생 관련 내용으로 아래 옵션 추가와 함께 초기화 작업 진행 가능
+* Found multiple CRI endpoints on the host. 에러 메시지 관련
+런타임 중복 발생 관련 내용으로 아래 옵션 추가와 함께 초기화 작업 진행 가능
 ```
 --cri-socket /var/run/crio/crio.sock 
 ```
