@@ -61,3 +61,26 @@ systemctl daemon-reload && systemctl restart kubelet
 # 노드 ip 확인
 kubectl get nodes -o wide
 ```
+
+* Kubeadm 초기화 작업 리셋
+```
+kubeadm reset 
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube* 
+sudo apt-get autoremove
+sudo rm -rf ~/.kube
+```
+
+* Join 명령어 확인
+```
+kubeadm token create --print-join-command 
+```
+
+user21 증상 관련
+https://potato-yong.tistory.com/150
+
+
+Found multiple CRI endpoints on the host. 에러 메시지 관련
+ - 런타임 중복 발생 관련 내용으로 아래 옵션 추가와 함께 초기화 작업 진행 가능
+```
+--cri-socket /var/run/crio/crio.sock 
+```
