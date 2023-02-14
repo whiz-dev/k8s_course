@@ -67,6 +67,8 @@ kubectl create -f https://raw.githubusercontent.com/wsjang619/k8s_course/master/
 ```
 ![image](https://user-images.githubusercontent.com/92773629/218712109-bbb4fe31-ea4c-410b-8e98-c42c7aed2d61.png)
 
+참고링크 : https://github.com/flannel-io/flannel
+
 5. kubectl 자동완성 적용
 ```
 source <(kubectl completion bash)
