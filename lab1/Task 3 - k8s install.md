@@ -65,7 +65,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 kubectl create -f https://raw.githubusercontent.com/wsjang619/k8s_course/master/lab1/yaml/flannel.yaml
 ```
-![](./img/3-calico-install.png)
+![image](https://user-images.githubusercontent.com/92773629/218712109-bbb4fe31-ea4c-410b-8e98-c42c7aed2d61.png)
 
 5. kubectl 자동완성 적용
 ```
