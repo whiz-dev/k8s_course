@@ -72,7 +72,8 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0
 source <(kubectl completion bash)
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 source /etc/bash_completion
-alias k=kubectl
+echo alias k=kubectl >> ~/.bashrc
+source ~/.bashrc
 complete -F __start_kubectl k
 ```
 
