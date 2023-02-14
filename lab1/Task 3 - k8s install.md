@@ -61,9 +61,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
-4. Calico 네트워크 플러그인 설치
+4. flannel 네트워크 플러그인 설치
 ```
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/tigera-operator.yaml
+kubectl create -f https://github.com/wsjang619/k8s_course/tree/master/lab1/yaml/flannel.yaml
 ```
 ![](./img/3-calico-install.png)
 
