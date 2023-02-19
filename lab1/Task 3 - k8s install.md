@@ -63,7 +63,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 4. flannel 네트워크 플러그인 설치
 ```
-kubectl create -f https://raw.githubusercontent.com/wsjang619/k8s_course/master/lab1/yaml/flannel.yaml
+kubectl create -f https://raw.githubusercontent.com/whiz-dev/k8s_course/master/lab1/yaml/flannel.yaml
 ```
 ![image](https://user-images.githubusercontent.com/92773629/218712109-bbb4fe31-ea4c-410b-8e98-c42c7aed2d61.png)
 
