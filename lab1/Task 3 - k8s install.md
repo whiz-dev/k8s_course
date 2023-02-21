@@ -47,7 +47,7 @@ systemctl enable --now kubelet
 
 2. kubeadm 초기화
 ```
-kubeadm init --pod-network-cidr=172.16.0.0/16 --apiserver-advertise-address=<Master IP>
+kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<Master IP>
 ```
 출력결과(kubeadm join 이하 명령어)를 잘 저장해둡니다.
 3~5분 소요됩니다.
@@ -63,7 +63,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 4. flannel 네트워크 플러그인 설치
 ```
-kubectl create -f https://raw.githubusercontent.com/whiz-dev/k8s_course/master/lab1/yaml/flannel.yaml
+kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 ![image](https://user-images.githubusercontent.com/92773629/218712109-bbb4fe31-ea4c-410b-8e98-c42c7aed2d61.png)
 
